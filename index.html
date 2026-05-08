@@ -20,6 +20,8 @@
   <meta name="twitter:title" content="UPI QR Codes Generator - 100% Free Online Tool">
   <meta name="twitter:description" content="Create and download a UPI QR Code online. The QR is generated in your browser and your payment details are not stored.">
   <link rel="canonical" href="https://upiqrcodes.com/">
+  <link rel="icon" type="image/png" href="assets/brand/upi-qr-codes-icon.png">
+  <link rel="apple-touch-icon" href="assets/brand/upi-qr-codes-icon.png">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <script id="qrLib" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
   <script src="assets/logos/logo-data.js"></script>
@@ -84,22 +86,18 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 11px;
+      color: #000;
       font-weight: 800;
       letter-spacing: 0;
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 7px;
-      display: grid;
-      place-items: center;
-      background: #0b7a5a;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 900;
+    .brand-logo {
+      width: 42px;
+      height: auto;
+      display: block;
+      flex: 0 0 auto;
     }
 
     .nav-links {
@@ -864,6 +862,7 @@
         "name": "UPI QR Codes Generator",
         "alternateName": "UPI QR Codes",
         "url": "https://upiqrcodes.com/",
+        "image": "https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
         "isAccessibleForFree": true,
@@ -917,7 +916,7 @@
   <header class="topbar" aria-label="Site header">
     <nav class="nav">
       <div class="brand" aria-label="UPI QR Codes">
-        <span class="brand-mark">UPI</span>
+        <img class="brand-logo" src="assets/brand/upi-qr-codes-icon.png" alt="UPI QR Codes Generator logo">
         <span>UPI QR Codes</span>
       </div>
       <div class="nav-links">
