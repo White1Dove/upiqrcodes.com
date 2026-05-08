@@ -14,11 +14,13 @@
   <meta property="og:description" content="Generate a UPI QR Code online for Indian payments. Fast, free, browser-based, and compatible with BHIM UPI apps including Google Pay, PhonePe, Paytm, and Amazon Pay.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://upiqrcodes.com/">
+  <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
   <meta property="og:locale" content="en_IN">
   <meta property="og:site_name" content="UPI QR Codes">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="UPI QR Codes Generator - 100% Free Online Tool">
   <meta name="twitter:description" content="Create and download a UPI QR Code online. The QR is generated in your browser and your payment details are not stored.">
+  <meta name="twitter:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
   <link rel="canonical" href="https://upiqrcodes.com/">
   <link rel="icon" type="image/png" href="assets/brand/upi-qr-codes-icon.png">
   <link rel="apple-touch-icon" href="assets/brand/upi-qr-codes-icon.png">
@@ -33,6 +35,13 @@
   </script>
   <script id="qrLib" src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
   <script src="assets/logos/logo-data.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX4DBQMEJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-PX4DBQMEJ7");
+  </script>
   <style>
     :root {
       color-scheme: light;
@@ -627,12 +636,17 @@
     }
 
     .feature-list,
-    .faq-list {
+    .faq-list,
+    .use-case-grid,
+    .check-list {
       display: grid;
       gap: 12px;
     }
 
     .feature,
+    .use-case,
+    .comparison,
+    .check-item,
     details {
       background: #fff;
       border: 1px solid var(--line);
@@ -641,9 +655,27 @@
     }
 
     .feature p,
+    .use-case p,
+    .comparison p,
+    .check-item p,
     details p {
       margin: 0;
       color: var(--muted);
+    }
+
+    .use-case-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .check-list {
+      margin-top: 16px;
     }
 
     summary {
@@ -785,7 +817,9 @@
 
     @media (max-width: 900px) {
       .hero-inner,
-      .content-grid {
+      .content-grid,
+      .use-case-grid,
+      .comparison-grid {
         grid-template-columns: 1fr;
       }
 
@@ -873,11 +907,24 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "name": "UPI QR Codes",
+        "url": "https://upiqrcodes.com/",
+        "inLanguage": "en-IN",
+        "description": "Free browser-based UPI QR Code generator for Indian UPI payment links."
+      },
+      {
         "@type": "WebApplication",
         "name": "UPI QR Codes Generator",
         "alternateName": "UPI QR Codes",
         "url": "https://upiqrcodes.com/",
         "image": "https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@type": "Organization",
+          "name": "UPI QR Codes",
+          "url": "https://upiqrcodes.com/"
+        },
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
         "isAccessibleForFree": true,
@@ -920,6 +967,22 @@
               "@type": "Answer",
               "text": "No. The QR code is generated inside the browser. The tool does not collect, transmit, or store the information entered on the page."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use the QR code for a shop or invoice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can create a printable UPI QR card for a shop counter or add a fixed amount and note for invoice collection. The site does not verify payment settlement."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this a payment gateway?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The tool only creates a UPI payment link and QR code. Payments are approved in the payer's UPI app, and settlement confirmation must come from your bank, PSP, or payment gateway."
+            }
           }
         ]
       }
@@ -937,6 +1000,7 @@
       <div class="nav-links">
         <a href="#generator">Generator</a>
         <a href="#how-it-works">How it works</a>
+        <a href="#use-cases">Use cases</a>
         <a href="#faq">FAQ</a>
       </div>
     </nav>
@@ -1078,13 +1142,55 @@
       </section>
 
       <section class="copy">
-        <h2>Implementation notes</h2>
+        <h2>Use it safely</h2>
         <div class="notice">
           For production merchant acceptance, use a verified merchant UPI account or payment gateway when you need settlement tracking, refunds, signed QR, fraud controls, or reconciliation.
         </div>
-        <p style="margin-top: 16px;">This page is best suited for personal UPI collection, donation QR, small invoice QR, shop counter QR, or payment link prototypes.</p>
+        <div class="check-list">
+          <div class="check-item">
+            <h3>Test before printing</h3>
+            <p>Scan the generated QR with a UPI app and confirm that the payee name, UPI ID, amount, and note appear as expected.</p>
+          </div>
+          <div class="check-item">
+            <h3>Confirm payment separately</h3>
+            <p>This page cannot know whether money was received. Check your bank app, UPI app, or payment provider for settlement status.</p>
+          </div>
+          <div class="check-item">
+            <h3>Keep details simple</h3>
+            <p>Use a clear merchant name and short note so customers can review the payment request quickly before entering their UPI PIN.</p>
+          </div>
+        </div>
       </section>
     </div>
+
+    <section class="copy" id="use-cases">
+      <h2>UPI QR Code use cases</h2>
+      <p>A UPI QR Code can support more than one payment flow. Choose a blank amount when the customer should type the value, or include an amount when the payment request is tied to a specific bill or invoice.</p>
+      <div class="use-case-grid">
+        <div class="use-case">
+          <h3>Shop counter QR</h3>
+          <p>Create a static UPI QR Card with your shop name and UPI ID, print it, and let customers enter the amount after scanning.</p>
+        </div>
+        <div class="use-case">
+          <h3>Invoice payment QR</h3>
+          <p>Add the invoice amount and a short note so the customer sees the payment context before approving in their UPI app.</p>
+        </div>
+        <div class="use-case">
+          <h3>Donation or collection QR</h3>
+          <p>Leave the amount blank for flexible contributions, or set an amount for a fixed campaign, event, or collection request.</p>
+        </div>
+      </div>
+      <div class="comparison-grid">
+        <div class="comparison">
+          <h3>Static UPI QR without amount</h3>
+          <p>Best when the payer should decide or type the amount. This is common for shop counters, stalls, donations, and repeated collections.</p>
+        </div>
+        <div class="comparison">
+          <h3>UPI QR with fixed amount</h3>
+          <p>Best when the amount is already known. This works well for invoices, order totals, class fees, bookings, and one-time payment requests.</p>
+        </div>
+      </div>
+    </section>
 
     <section class="copy" id="faq">
       <h2>UPI QR FAQ</h2>
@@ -1106,8 +1212,20 @@
           <p>Yes. You can download the full QR Card or the QR code only in PNG, JPG, SVG, or PDF format.</p>
         </details>
         <details>
+          <summary>Can I use this for a shop counter?</summary>
+          <p>Yes. Enter your shop or payee name and UPI ID, leave the amount blank, generate the QR, and print the QR Card. Customers can scan it and enter the amount in their UPI app.</p>
+        </details>
+        <details>
+          <summary>Can I create a UPI QR Code with a fixed amount?</summary>
+          <p>Yes. Enter an amount before generating the QR. The generated UPI payment link includes the amount field so the payer sees that amount after scanning.</p>
+        </details>
+        <details>
           <summary>Does this confirm that money was received?</summary>
           <p>No. A browser-only QR generator creates the payment request. To confirm payment status automatically, connect a bank, PSP, or payment gateway API.</p>
+        </details>
+        <details>
+          <summary>Is this a payment gateway?</summary>
+          <p>No. This site is only a UPI QR Code and UPI payment link generator. It does not process money, hold funds, verify settlement, or provide refunds.</p>
         </details>
         <details>
           <summary>Is the UPI PIN included in the QR?</summary>
@@ -1115,6 +1233,7 @@
         </details>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -1194,6 +1313,22 @@
         amount: cleanText(data.get("amount") || "", 16),
         note: cleanText(data.get("note") || "", 80)
       };
+    }
+
+    function applyQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      const fieldMap = {
+        payeeName: form.elements.payeeName,
+        upiId: form.elements.upiId,
+        amount: form.elements.amount,
+        note: form.elements.note
+      };
+
+      Object.entries(fieldMap).forEach(([key, element]) => {
+        if (params.has(key) && element) {
+          element.value = cleanText(params.get(key) || "", element.maxLength || 320);
+        }
+      });
     }
 
     function validate(values) {
@@ -1738,6 +1873,15 @@
     });
 
     window.addEventListener("load", () => {
+      applyQueryParams();
+      const values = getFormValues();
+      updateCardText(values);
+
+      if (values.payeeName && values.upiId) {
+        generate();
+        return;
+      }
+
       setPlaceholder("Enter details, then click Generate QR Code.");
     });
   </script>
