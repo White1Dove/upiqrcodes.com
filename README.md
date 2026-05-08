@@ -12,18 +12,7 @@ Current status: launched on Cloudflare Pages and connected to GitHub for automat
 - `assets/logos/` - local UPI app logos and canvas-safe logo data.
 - `robots.txt` and `sitemap.xml` - production SEO discovery files.
 - `_redirects` and `_headers` - Cloudflare Pages production routing and headers.
-- `PROJECT_CONTEXT.md` - working context for future AI/dev sessions.
-
-## Product Positioning
-
-The target keyword lineage started from `upi qr code generator`, with the current page optimized around `UPI QR Codes Generator`.
-
-This is a browser-based static UPI QR/payment-link generator for Indian payment use cases. It should not be positioned as a generic QR generator, payment gateway, settlement system, or payment-status verification service.
-
-Auxiliary references for future planning:
-
-- Conversation ID: `019dfc81-95b4-7102-a159-0763186f7503`
-- Keyword report, for auxiliary reference only: `/Users/liangkaixiang/Documents/Codex/2026-04-29/compress-image-to-50kb/upi-qr-code-generator-hv-analysis.md`
+- `PROJECT_CONTEXT.md` - local working context for future AI/dev sessions. This file is intentionally not committed.
 
 ## Deploy
 
