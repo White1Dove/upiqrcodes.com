@@ -1,6 +1,26 @@
 # UPI QR Codes
 
-Static browser-based UPI QR Code Generator for `https://upiqrcodes.com/`.
+Static browser-based UPI QR Code Generator for [upiqrcodes.com](https://upiqrcodes.com/).
+
+UPI QR Codes is a free online tool for creating UPI payment QR codes and UPI payment links in the browser. It supports payer-entered amount QR codes, fixed amount QR codes, printable shop counter QR cards, invoice payment QR codes, and direct `upi://pay` payment links.
+
+## Live Tools
+
+- [Free UPI QR Code Generator](https://upiqrcodes.com/)
+- [Static UPI QR Code Generator](https://upiqrcodes.com/static-upi-qr-code/)
+- [UPI QR Code Generator with Amount](https://upiqrcodes.com/upi-qr-code-with-amount/)
+- [UPI Payment Link Generator](https://upiqrcodes.com/upi-payment-link-generator/)
+- [UPI QR Code for Shop](https://upiqrcodes.com/upi-qr-code-for-shop/)
+- [UPI QR Code for Invoice](https://upiqrcodes.com/upi-qr-code-for-invoice/)
+- [What is UPI QR Code?](https://upiqrcodes.com/what-is-upi-qr-code/)
+
+## Features
+
+- Generate `upi://pay` payment links from payee name, UPI ID / VPA, optional amount, and note.
+- Create static UPI QR codes where the payer enters the amount.
+- Create fixed amount UPI QR codes for invoices, fees, bookings, and order totals.
+- Download QR cards or QR-only files from the main generator.
+- Browser-based generation; entered UPI details are not stored by the site.
 
 Current status: launched on Cloudflare Pages and connected to GitHub for automatic deployment from `main`.
 
