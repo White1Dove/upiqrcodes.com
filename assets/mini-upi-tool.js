@@ -7,6 +7,7 @@
   const output = tool.querySelector("[data-intent-output]");
   const errorEl = tool.querySelector("[data-error]");
   const copyBtn = tool.querySelector("[data-copy]");
+  const openUpiBtn = tool.querySelector("[data-open-upi]");
   const openBtn = tool.querySelector("[data-open-full]");
   const mode = tool.dataset.mode || "default";
   const upiIdPattern = /^[a-zA-Z0-9._-]{2,256}@[a-zA-Z][a-zA-Z0-9._-]{2,64}$/;
@@ -33,6 +34,7 @@
     if (!next.payeeName) return "Enter the payee or merchant name.";
     if (!next.upiId) return "Enter a UPI ID / VPA.";
     if (!upiIdPattern.test(next.upiId)) return "Enter a valid UPI ID, for example name@upi.";
+    if ((mode === "amount" || mode === "invoice") && !next.amount) return "Enter the fixed amount for this QR.";
     if (next.amount) {
       const parsed = Number(next.amount);
       if (!Number.isFinite(parsed) || parsed <= 0) return "Amount must be greater than 0.";
@@ -43,13 +45,16 @@
 
   function buildIntent(next) {
     const params = [
-      ["pa", next.upiId],
-      ["pn", next.payeeName],
-      ["cu", "INR"]
+      ["pa", next.upiId, true],
+      ["pn", next.payeeName]
     ];
     if (next.amount) params.push(["am", Number(next.amount).toFixed(2)]);
     if (next.note) params.push(["tn", next.note]);
-    return `upi://pay?${params.map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join("&")}`;
+    params.push(["cu", "INR"]);
+    return `upi://pay?${params.map(([key, value, preserveAt]) => {
+      const encoded = encodeURIComponent(value);
+      return `${key}=${preserveAt ? encoded.replace(/%40/g, "@") : encoded}`;
+    }).join("&")}`;
   }
 
   function setPlaceholder(message) {
@@ -58,6 +63,7 @@
     qrEl.innerHTML = `<div class="qr-placeholder">${message}</div>`;
     output.textContent = "upi://pay?... will appear here";
     copyBtn.disabled = true;
+    openUpiBtn.disabled = true;
   }
 
   function renderQr(intent) {
@@ -73,6 +79,7 @@
     latestIntent = intent;
     output.textContent = intent;
     copyBtn.disabled = false;
+    openUpiBtn.disabled = false;
   }
 
   function updateOpenLink(next) {
@@ -118,6 +125,11 @@
     } catch {
       output.focus();
     }
+  });
+
+  openUpiBtn.addEventListener("click", () => {
+    if (!latestIntent) return;
+    window.location.href = latestIntent;
   });
 
   updateOpenLink(values());

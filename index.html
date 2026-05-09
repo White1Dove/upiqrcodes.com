@@ -571,6 +571,14 @@
       gap: 10px;
     }
 
+    .inline-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
     .link-action {
       min-height: 32px;
       padding: 6px 10px;
@@ -1107,7 +1115,10 @@
             <div class="intent-box">
               <div class="intent-head">
                 <label for="intentOutput">UPI Payment Link</label>
-                <button class="secondary link-action" id="copyBtn" type="button" disabled>Copy Link</button>
+                <div class="inline-actions">
+                  <button class="secondary link-action" id="copyBtn" type="button" disabled>Copy Link</button>
+                  <button class="secondary link-action" id="openUpiBtn" type="button" disabled>Open UPI App</button>
+                </div>
               </div>
               <div class="intent-output" id="intentOutput">upi://pay?... will appear here</div>
             </div>
@@ -1378,6 +1389,7 @@
     const qrDownloadMenu = document.getElementById("qrDownloadMenu");
     const openBtn = document.getElementById("openBtn");
     const copyBtn = document.getElementById("copyBtn");
+    const openUpiBtn = document.getElementById("openUpiBtn");
     const printBtn = document.getElementById("printBtn");
     const toast = document.getElementById("toast");
     const shareModal = document.getElementById("shareModal");
@@ -1450,16 +1462,19 @@
 
     function buildUpiIntent(values) {
       const params = [
-        ["pa", values.upiId],
-        ["pn", values.payeeName],
-        ["cu", "INR"]
+        ["pa", values.upiId, true],
+        ["pn", values.payeeName]
       ];
 
       if (values.amount) params.push(["am", Number(values.amount).toFixed(2)]);
       if (values.note) params.push(["tn", values.note]);
+      params.push(["cu", "INR"]);
 
       const query = params
-        .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
+        .map(([key, value, preserveAt]) => {
+          const encoded = encodeURIComponent(value);
+          return `${key}=${preserveAt ? encoded.replace(/%40/g, "@") : encoded}`;
+        })
         .join("&");
 
       return `upi://pay?${query}`;
@@ -1470,6 +1485,7 @@
       downloadQrBtn.disabled = !enabled;
       openBtn.disabled = !enabled;
       copyBtn.disabled = !enabled;
+      openUpiBtn.disabled = !enabled;
       printBtn.disabled = !enabled;
     }
 
@@ -1929,6 +1945,11 @@
     openBtn.addEventListener("click", () => {
       if (!latestIntent) return;
       openShareModal();
+    });
+
+    openUpiBtn.addEventListener("click", () => {
+      if (!latestIntent) return;
+      window.location.href = latestIntent;
     });
 
     printBtn.addEventListener("click", () => {
