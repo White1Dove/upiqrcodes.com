@@ -1,6 +1,0 @@
-.DS_Store
-PROJECT_CONTEXT.md
-node_modules/
-.wrangler/
-dist/
-.wrangler-pages-manifest.json

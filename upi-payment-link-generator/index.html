@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UPI Payment Link Generator - Create upi://pay Link Online</title>
+  <meta name="description" content="Generate a UPI payment link online using payee name, UPI ID, optional amount, and note. Copy the upi://pay link or turn it into a QR code.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b7a5a">
+  <meta property="og:title" content="UPI Payment Link Generator">
+  <meta property="og:description" content="Create and copy a UPI payment link for Indian UPI apps, with optional amount and note.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://upiqrcodes.com/upi-payment-link-generator/">
+  <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
+  <meta property="og:locale" content="en_IN">
+  <link rel="canonical" href="https://upiqrcodes.com/upi-payment-link-generator/">
+  <link rel="icon" type="image/png" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="stylesheet" href="/assets/seo-pages.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX4DBQMEJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX4DBQMEJ7');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="/"><img class="brand-logo" src="/assets/brand/upi-qr-codes-icon.png" alt="UPI QR Codes logo"><span>UPI QR Codes</span></a>
+      <div class="nav-links"><a href="/">Generator</a><a href="/#tools">Tools</a><a href="/privacy.html">Privacy</a></div>
+    </nav>
+  </header>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="breadcrumb"><a href="/">UPI QR Codes</a> / Payment link</p>
+      <h1>UPI Payment Link Generator</h1>
+      <p class="hero-copy">Create a UPI payment link such as upi://pay with your UPI ID, payee name, optional amount, and note. Copy the link or encode it as a QR code.</p>
+    </div>
+  </div>
+  <main>
+    <section class="tool-panel" data-upi-tool data-mode="link">
+      <div class="tool-grid">
+        <form class="tool-form" data-upi-form>
+          <div class="field"><label for="payeeName">Payee Name</label><input id="payeeName" name="payeeName" type="text" placeholder="Account holder or business name" required maxlength="80"></div>
+          <div class="field"><label for="upiId">UPI ID / VPA</label><input id="upiId" name="upiId" type="text" placeholder="example@upi" required></div>
+          <div class="field"><label for="amount">Amount (Optional)</label><input id="amount" name="amount" type="number" inputmode="decimal" min="1" max="200000" step="0.01" placeholder="Leave blank for payer-entered amount"></div>
+          <div class="field"><label for="note">Note (Optional)</label><textarea id="note" name="note" maxlength="80" placeholder="Payment reason or invoice reference"></textarea></div>
+          <div class="actions"><button class="primary" type="submit">Generate Payment Link</button><a class="button secondary" href="/#generator" data-open-full>Open Full Generator</a></div>
+          <div class="error" data-error aria-live="polite"></div>
+        </form>
+        <aside class="tool-preview">
+          <div class="qr-box" data-qr></div>
+          <label>UPI Payment Link</label>
+          <div class="intent-output" data-intent-output tabindex="0"></div>
+          <button class="secondary" type="button" data-copy disabled>Copy UPI Link</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>What is a UPI payment link?</h2>
+      <p>A UPI payment link is a URI that starts with upi://pay and includes payment request fields. Common fields include pa for payee address, pn for payee name, am for amount, tn for transaction note, and cu for currency.</p>
+      <p>When a compatible UPI app opens the link, it shows the payment request to the payer. The payer still reviews the details and approves the payment inside their own app.</p>
+      <div class="card-grid">
+        <div class="card"><h3>Copyable link</h3><p>Use the generated link in messages, emails, or buttons where UPI app deep links are supported.</p></div>
+        <div class="card"><h3>QR ready</h3><p>The same link can be encoded into a QR code for scanning.</p></div>
+        <div class="card"><h3>Browser-based</h3><p>The link is generated locally in the browser from the fields you enter.</p></div>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>Payment link vs UPI QR code</h2>
+      <p>A UPI QR code is usually the same payment link encoded as a scannable QR. Use a direct UPI payment link when the payer is already on a phone. Use a QR code when the payer scans from another device or a printed card.</p>
+      <div class="notice">This is not a payment gateway. It cannot confirm success, handle refunds, or reconcile settlement.</div>
+    </section>
+
+    <section class="copy">
+      <h2>Related UPI QR tools</h2>
+      <div class="related-grid">
+        <a class="related-link" href="/static-upi-qr-code/"><strong>Static UPI QR Code Generator</strong><p>Create a QR without amount for payer-entered payments.</p></a>
+        <a class="related-link" href="/upi-qr-code-with-amount/"><strong>UPI QR Code Generator with Amount</strong><p>Create a QR with a fixed INR amount.</p></a>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>UPI payment link FAQ</h2>
+      <div class="faq-list">
+        <details><summary>What does upi://pay mean?</summary><p>It is the common UPI payment URI scheme used to open a payment request in compatible UPI apps.</p></details>
+        <details><summary>Can I share the generated link on WhatsApp?</summary><p>You can copy the link and share it, but whether it opens a UPI app depends on the payer's device, app, and platform behavior.</p></details>
+        <details><summary>Does the link include my UPI PIN?</summary><p>No. UPI PIN is never included in the link or QR. The payer enters their PIN only inside their UPI app.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer><a href="/">UPI QR Code Generator</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a></footer>
+  <script src="/assets/mini-upi-tool.js"></script>
+</body>
+</html>

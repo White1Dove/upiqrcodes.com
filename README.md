@@ -1,6 +1,6 @@
 # UPI QR Codes
 
-Static browser-based UPI QR Codes Generator for `https://upiqrcodes.com/`.
+Static browser-based UPI QR Code Generator for `https://upiqrcodes.com/`.
 
 Current status: launched on Cloudflare Pages and connected to GitHub for automatic deployment from `main`.
 

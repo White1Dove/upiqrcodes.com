@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UPI QR Code for Invoice - Generate Invoice Payment QR</title>
+  <meta name="description" content="Create a UPI QR code for invoice payments with fixed amount and invoice note. Generate a QR for bills, fees, and one-time payment collection.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b7a5a">
+  <meta property="og:title" content="UPI QR Code for Invoice">
+  <meta property="og:description" content="Generate a UPI invoice payment QR with amount and note.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://upiqrcodes.com/upi-qr-code-for-invoice/">
+  <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
+  <meta property="og:locale" content="en_IN">
+  <link rel="canonical" href="https://upiqrcodes.com/upi-qr-code-for-invoice/">
+  <link rel="icon" type="image/png" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="stylesheet" href="/assets/seo-pages.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX4DBQMEJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX4DBQMEJ7');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="/"><img class="brand-logo" src="/assets/brand/upi-qr-codes-icon.png" alt="UPI QR Codes logo"><span>UPI QR Codes</span></a>
+      <div class="nav-links"><a href="/">Generator</a><a href="/#tools">Tools</a><a href="/privacy.html">Privacy</a></div>
+    </nav>
+  </header>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="breadcrumb"><a href="/">UPI QR Codes</a> / Invoice QR</p>
+      <h1>UPI QR Code for Invoice</h1>
+      <p class="hero-copy">Generate a UPI QR code for a specific invoice amount. Add an invoice reference in the note so the payer sees the payment context before approving.</p>
+    </div>
+  </div>
+  <main>
+    <section class="tool-panel" data-upi-tool data-mode="invoice">
+      <div class="tool-grid">
+        <form class="tool-form" data-upi-form>
+          <div class="field"><label for="payeeName">Business / Payee Name</label><input id="payeeName" name="payeeName" type="text" placeholder="Business or account holder name" required maxlength="80"></div>
+          <div class="field"><label for="upiId">UPI ID / VPA</label><input id="upiId" name="upiId" type="text" placeholder="business@upi" required></div>
+          <div class="field"><label for="amount">Invoice Amount in INR</label><input id="amount" name="amount" type="number" inputmode="decimal" min="1" max="200000" step="0.01" placeholder="2500.00" required></div>
+          <div class="field"><label for="note">Invoice Note</label><textarea id="note" name="note" maxlength="80" placeholder="Invoice INV-1024"></textarea><span class="hint">Keep the note short so it is readable in UPI apps.</span></div>
+          <div class="actions"><button class="primary" type="submit">Generate Invoice QR</button><a class="button secondary" href="/#generator" data-open-full>Open Full Generator</a></div>
+          <div class="error" data-error aria-live="polite"></div>
+        </form>
+        <aside class="tool-preview">
+          <div class="qr-box" data-qr></div>
+          <label>UPI Payment Link</label>
+          <div class="intent-output" data-intent-output tabindex="0"></div>
+          <button class="secondary" type="button" data-copy disabled>Copy UPI Link</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>How invoice UPI QR codes work</h2>
+      <p>An invoice UPI QR should usually include a fixed amount and a short transaction note. The payer scans the QR, sees the business name, UPI ID, invoice amount, and note, then approves the payment in their UPI app.</p>
+      <p>This is different from a reusable shop counter QR. An invoice payment usually has a known total, so encoding the amount helps reduce manual typing and makes the payment request easier to review.</p>
+      <div class="card-grid">
+        <div class="card"><h3>Use the invoice total</h3><p>Enter the final amount payable after tax, discount, delivery, or other charges.</p></div>
+        <div class="card"><h3>Add a short reference</h3><p>Use the note field for invoice number, customer code, or payment reason.</p></div>
+        <div class="card"><h3>Reconcile separately</h3><p>The QR request is not a receipt. Confirm settlement in your bank, UPI app, or gateway.</p></div>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>When to use a gateway instead</h2>
+      <p>If you need automatic invoice status updates, payment receipts, refund workflows, reconciliation dashboards, or accounting integrations, use a payment gateway or bank/PSP solution. This page creates the QR request only.</p>
+      <div class="notice">Do not treat a generated QR as proof of payment. The payer must approve the payment, and you must verify receipt separately.</div>
+    </section>
+
+    <section class="copy">
+      <h2>Related UPI QR tools</h2>
+      <div class="related-grid">
+        <a class="related-link" href="/upi-qr-code-with-amount/"><strong>UPI QR Code Generator with Amount</strong><p>Create a fixed amount QR for any payment request.</p></a>
+        <a class="related-link" href="/upi-payment-link-generator/"><strong>UPI Payment Link Generator</strong><p>Copy the underlying UPI payment link used inside the QR.</p></a>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>Invoice UPI QR FAQ</h2>
+      <div class="faq-list">
+        <details><summary>Can I put an invoice number in the UPI QR?</summary><p>You can add a short invoice number or reference in the note field. Keep it concise because UPI apps may display limited text.</p></details>
+        <details><summary>Can this page mark an invoice as paid?</summary><p>No. The page does not connect to your bank or accounting system. It only generates a payment request.</p></details>
+        <details><summary>Should every invoice have a different QR?</summary><p>If each invoice has a different amount or reference, generate a separate QR so the payment request matches that invoice.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer><a href="/">UPI QR Code Generator</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a></footer>
+  <script src="/assets/mini-upi-tool.js"></script>
+</body>
+</html>

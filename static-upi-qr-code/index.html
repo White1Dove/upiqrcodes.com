@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Static UPI QR Code Generator - Free Payer-Entered Amount QR</title>
+  <meta name="description" content="Create a free static UPI QR code without a fixed amount. Best for shop counters, donations, stalls, and collections where the payer enters the amount.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b7a5a">
+  <meta property="og:title" content="Static UPI QR Code Generator">
+  <meta property="og:description" content="Generate a static UPI QR code for payer-entered amounts. Free, browser-based, and ready to test or print.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://upiqrcodes.com/static-upi-qr-code/">
+  <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
+  <meta property="og:locale" content="en_IN">
+  <link rel="canonical" href="https://upiqrcodes.com/static-upi-qr-code/">
+  <link rel="icon" type="image/png" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="stylesheet" href="/assets/seo-pages.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX4DBQMEJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX4DBQMEJ7');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="/"><img class="brand-logo" src="/assets/brand/upi-qr-codes-icon.png" alt="UPI QR Codes logo"><span>UPI QR Codes</span></a>
+      <div class="nav-links"><a href="/">Generator</a><a href="/#tools">Tools</a><a href="/privacy.html">Privacy</a></div>
+    </nav>
+  </header>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="breadcrumb"><a href="/">UPI QR Codes</a> / Static QR</p>
+      <h1>Static UPI QR Code Generator</h1>
+      <p class="hero-copy">Create a UPI QR code without a fixed amount. The payer scans the QR, enters the amount in their UPI app, reviews the payee details, and approves the payment.</p>
+    </div>
+  </div>
+  <main>
+    <section class="tool-panel" data-upi-tool data-mode="static">
+      <div class="tool-grid">
+        <form class="tool-form" data-upi-form>
+          <div class="field">
+            <label for="payeeName">Merchant / Payee Name</label>
+            <input id="payeeName" name="payeeName" type="text" placeholder="Business or account holder name" required maxlength="80">
+          </div>
+          <div class="field">
+            <label for="upiId">UPI ID / VPA</label>
+            <input id="upiId" name="upiId" type="text" placeholder="example@upi" required>
+          </div>
+          <div class="field">
+            <label for="note">Note (Optional)</label>
+            <textarea id="note" name="note" maxlength="80" placeholder="Counter payment, donation, collection"></textarea>
+            <span class="hint">This static QR intentionally leaves the amount blank.</span>
+          </div>
+          <div class="actions">
+            <button class="primary" type="submit">Generate Static QR</button>
+            <a class="button secondary" href="/#generator" data-open-full>Open Full Generator</a>
+          </div>
+          <div class="error" data-error aria-live="polite"></div>
+        </form>
+        <aside class="tool-preview">
+          <div class="qr-box" data-qr></div>
+          <label>UPI Payment Link</label>
+          <div class="intent-output" data-intent-output tabindex="0"></div>
+          <button class="secondary" type="button" data-copy disabled>Copy UPI Link</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>What is a static UPI QR code?</h2>
+      <p>A static UPI QR code is a payment QR that includes the payee UPI ID, payee name, currency, and optional note, but no fixed transaction amount. After scanning, the payer types the amount inside their own UPI app.</p>
+      <p>This format is useful when the amount changes from customer to customer. A shop counter, food stall, donation desk, tuition collection, or event desk can reuse the same printed QR card instead of generating a new QR for every transaction.</p>
+      <div class="card-grid">
+        <div class="card"><h3>Best for counters</h3><p>Print one QR card and let customers enter the final amount after scanning.</p></div>
+        <div class="card"><h3>Reusable</h3><p>The same QR can be used repeatedly because the amount is not encoded.</p></div>
+        <div class="card"><h3>Still needs testing</h3><p>Always scan the QR before printing to confirm the UPI ID and payee name are correct.</p></div>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>Static QR vs fixed amount QR</h2>
+      <p>Use a static UPI QR when the payer should enter the amount. Use a fixed amount QR when the amount is already known, such as an invoice, booking fee, class fee, or order total.</p>
+      <div class="notice">This site only generates the UPI payment request. It does not process the payment or confirm whether money was received.</div>
+    </section>
+
+    <section class="copy">
+      <h2>Related UPI QR tools</h2>
+      <div class="related-grid">
+        <a class="related-link" href="/upi-qr-code-with-amount/"><strong>UPI QR Code Generator with Amount</strong><p>Create a QR where the amount is included in the payment request.</p></a>
+        <a class="related-link" href="/upi-qr-code-for-shop/"><strong>UPI QR Code for Shop</strong><p>Prepare a printable QR card for shop counter collection.</p></a>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>Static UPI QR FAQ</h2>
+      <div class="faq-list">
+        <details><summary>Can a static UPI QR work without an amount?</summary><p>Yes. A UPI payment link can omit the amount field. The payer enters the amount after scanning.</p></details>
+        <details><summary>Is a static UPI QR the same as a dynamic QR?</summary><p>No. A static QR contains reusable payment details. A dynamic QR is usually generated for a specific order or transaction by a payment system.</p></details>
+        <details><summary>Can this page confirm the payment?</summary><p>No. Payment confirmation must come from your UPI app, bank account, PSP, or payment gateway.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer><a href="/">UPI QR Code Generator</a> · <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a></footer>
+  <script src="/assets/mini-upi-tool.js"></script>
+</body>
+</html>
