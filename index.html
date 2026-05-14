@@ -813,15 +813,22 @@
       color: var(--accent);
     }
 
-    .startup-fame-badge {
-      display: inline-flex;
+    .footer-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
       margin-top: 14px;
     }
 
-    .startup-fame-badge img {
+    .footer-badges a {
+      display: inline-flex;
+    }
+
+    .footer-badges img {
       display: block;
-      width: 224px;
-      height: 36px;
+      height: auto;
+      max-width: min(250px, 100%);
     }
 
     .toast {
@@ -1493,7 +1500,10 @@
     <br>
     Contact: <a href="mailto:support@upiqrcodes.com">support@upiqrcodes.com</a>
     <br>
-    <a class="startup-fame-badge" href="https://startupfa.me/s/upi-qr-codes?utm_source=upiqrcodes.com" target="_blank" rel="noopener"><img src="https://startupfa.me/badges/featured-badge-small.webp" alt="UPI QR Codes - Featured on Startup Fame" width="224" height="36"></a>
+    <div class="footer-badges" aria-label="Launch directory badges">
+      <a href="https://startupfa.me/s/upi-qr-codes?utm_source=upiqrcodes.com" target="_blank" rel="noopener"><img src="https://startupfa.me/badges/featured-badge-small.webp" alt="UPI QR Codes - Featured on Startup Fame" width="224" height="36"></a>
+      <a href="https://www.uneed.best/tool/upi-qr-codes" target="_blank" rel="noopener"><img src="https://www.uneed.best/EMBED3B.png" alt="Launching Soon on Uneed" width="250"></a>
+    </div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
