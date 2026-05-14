@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Free UPI QR Code Generator - Create UPI QR Online</title>
-  <meta name="description" content="Create a free UPI QR code online for Indian payments, shops, invoices, links, and fixed amounts. Browser-based generator with PNG, PDF, and SVG downloads.">
+  <title>Free UPI QR Code Generator - UPI QR Codes</title>
+  <meta name="description" content="UPI QR Codes is a free browser-based UPI QR code generator for Indian payments, shops, invoices, payment links, and fixed amounts.">
   <meta name="robots" content="index,follow">
   <meta name="application-name" content="UPI QR Codes">
   <meta name="author" content="UPI QR Codes">
@@ -636,6 +636,63 @@
       color: var(--muted);
     }
 
+    .copy ul,
+    .copy ol {
+      margin: 0 0 14px 20px;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    .copy li {
+      margin: 6px 0;
+    }
+
+    .entity-summary,
+    .source-list {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-top: 16px;
+    }
+
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 16px;
+    }
+
+    .summary-table th,
+    .summary-table td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .summary-table th {
+      width: 30%;
+      color: var(--ink);
+      background: #f1f5f9;
+    }
+
+    .summary-table tr:last-child th,
+    .summary-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .quote {
+      border-left: 4px solid var(--accent);
+      padding-left: 14px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
     .feature-list,
     .faq-list,
     .use-case-grid,
@@ -750,6 +807,10 @@
       padding: 24px 22px;
       text-align: center;
       font-size: 13px;
+    }
+
+    footer a {
+      color: var(--accent);
     }
 
     .toast {
@@ -961,23 +1022,35 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://upiqrcodes.com/#organization",
+        "name": "UPI QR Codes",
+        "url": "https://upiqrcodes.com/",
+        "logo": "https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png",
+        "description": "UPI QR Codes is a free browser-based UPI QR code generator for Indian UPI payment QR codes and payment links.",
+        "sameAs": [
+          "https://github.com/White1Dove/upiqrcodes.com"
+        ]
+      },
+      {
         "@type": "WebSite",
         "name": "UPI QR Codes",
         "url": "https://upiqrcodes.com/",
         "inLanguage": "en-IN",
-        "description": "Free browser-based UPI QR Code generator for Indian UPI payment links."
+        "publisher": {
+          "@id": "https://upiqrcodes.com/#organization"
+        },
+        "description": "UPI QR Codes is a free browser-based UPI QR Code generator for Indian UPI payment links."
       },
       {
         "@type": "WebApplication",
-        "name": "Free UPI QR Code Generator",
+        "name": "UPI QR Codes",
         "alternateName": "UPI QR Codes",
         "url": "https://upiqrcodes.com/",
         "image": "https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png",
         "inLanguage": "en-IN",
         "publisher": {
-          "@type": "Organization",
-          "name": "UPI QR Codes",
-          "url": "https://upiqrcodes.com/"
+          "@id": "https://upiqrcodes.com/#organization"
         },
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Web",
@@ -1057,6 +1130,7 @@
         <a href="#tools">Tools</a>
         <a href="#use-cases">Use cases</a>
         <a href="#faq">FAQ</a>
+        <a href="/about.html">About</a>
       </div>
     </nav>
   </header>
@@ -1065,7 +1139,7 @@
     <div class="hero-inner">
       <div class="hero-copy">
         <h1>Free UPI QR Code Generator</h1>
-        <p>Create a 100% free UPI QR Code online for shops, invoices, donations, and payment links. Enter your merchant name and UPI ID; the QR is generated instantly in your browser.</p>
+        <p>UPI QR Codes is a free browser-based UPI QR Code Generator for Indian UPI payments. It creates UPI payment QR codes and UPI payment links for shops, invoices, donations, and fixed-amount requests without storing the details you enter.</p>
       </div>
 
       <div class="trust-note">
@@ -1239,6 +1313,43 @@
       </section>
     </div>
 
+    <section class="copy" id="about">
+      <h2>What is UPI QR Codes?</h2>
+      <p><strong>UPI QR Codes</strong> is a free browser-based UPI QR code generator for creating Indian UPI payment QR codes and UPI payment links. It is a front-end tool: it generates a UPI payment request link, but it does not process money, verify settlement, or act as a wallet.</p>
+      <p>A UPI QR code refers to a QR code that encodes a UPI payment request, usually including a payee UPI ID, payee name, INR currency, and optional amount or note.</p>
+      <div class="entity-summary">
+        <h3>Entity summary</h3>
+        <table class="summary-table">
+          <tbody>
+            <tr>
+              <th>Brand</th>
+              <td>UPI QR Codes</td>
+            </tr>
+            <tr>
+              <th>Category</th>
+              <td>Browser-based UPI QR code generator and UPI payment link generator</td>
+            </tr>
+            <tr>
+              <th>Primary use</th>
+              <td>Create UPI payment QR codes for shops, invoices, donations, collections, and fixed-amount payment requests.</td>
+            </tr>
+            <tr>
+              <th>Privacy model</th>
+              <td>QR generation runs in the browser. The tool does not collect, transmit, or store entered UPI IDs, amounts, notes, or generated QR codes.</td>
+            </tr>
+            <tr>
+              <th>Generation method</th>
+              <td>The tool builds a UPI intent URI from the entered payee address, payee name, optional amount, optional note, and INR currency, then encodes that URI as a QR code.</td>
+            </tr>
+            <tr>
+              <th>Developer surface</th>
+              <td><a href="https://github.com/White1Dove/upiqrcodes.com">UPI QR Codes GitHub repository</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="copy" id="tools">
       <h2>UPI QR tools</h2>
       <p>UPI QR Codes is organized as a focused set of UPI QR tools. Each page targets one clear payment task so the tool, explanation, and examples match the exact search intent.</p>
@@ -1271,6 +1382,18 @@
           <h3>Coming later</h3>
           <p>Bulk QR generation and QR testing should be built only when they include real CSV or validation features.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="copy" id="references">
+      <h2>UPI references</h2>
+      <p>UPI QR Codes uses public UPI intent fields to create a payment request that a payer reviews inside their own UPI app. For background on the payment network and UPI app flow, see these official sources:</p>
+      <div class="source-list">
+        <p class="quote">NPCI describes UPI as "an instant payment system" for bank-to-bank transfers.</p>
+        <ul>
+          <li><a href="https://www.npci.org.in/what-we-do/upi/product-overview">NPCI UPI product overview</a> explains the UPI payment system operated by the National Payments Corporation of India.</li>
+          <li><a href="https://www.bhimupi.org.in/what-we-do">BHIM UPI official website</a> describes the consumer UPI app flow, including sending money and scanning QR codes.</li>
+        </ul>
       </div>
     </section>
 
@@ -1353,7 +1476,9 @@
     <a href="/static-upi-qr-code/">Static UPI QR</a> ·
     <a href="/upi-qr-code-with-amount/">QR with amount</a> ·
     <a href="/upi-payment-link-generator/">Payment link</a> ·
-    <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a>
+    <a href="/about.html">About</a> ·
+    <a href="/privacy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> ·
+    <a href="https://github.com/White1Dove/upiqrcodes.com">GitHub</a>
     <br>
     Contact: <a href="mailto:support@upiqrcodes.com">support@upiqrcodes.com</a>
   </footer>
