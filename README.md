@@ -26,12 +26,12 @@ Current status: launched on Cloudflare Pages and connected to GitHub for automat
 
 ## Files
 
-- `index.html` - the single-page generator.
-- `privacy.html` and `terms.html` - public policy pages.
+- `index.html` - homepage generator and SEO landing page.
+- `static-upi-qr-code/`, `upi-qr-code-with-amount/`, `upi-payment-link-generator/`, `upi-qr-code-for-shop/`, `upi-qr-code-for-invoice/`, and `what-is-upi-qr-code/` - long-tail tool and guide pages.
+- `about.html`, `privacy.html`, and `terms.html` - public trust and policy pages.
 - `assets/brand/` - site logo assets.
 - `assets/logos/` - local UPI app logos and canvas-safe logo data.
-- `robots.txt` and `sitemap.xml` - production SEO discovery files.
-- `_redirects` and `_headers` - Cloudflare Pages production routing and headers.
+- `sitemap.xml` - production SEO discovery file.
 - `PROJECT_CONTEXT.md` - local working context for future AI/dev sessions. This file is intentionally not committed.
 
 ## Deploy
