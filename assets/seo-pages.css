@@ -70,6 +70,7 @@ a {
 .nav-links {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 18px;
   color: var(--muted);
   font-size: 14px;
@@ -379,7 +380,7 @@ footer {
 
   .nav-links {
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 8px;
   }
 

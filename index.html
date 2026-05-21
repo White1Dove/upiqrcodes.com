@@ -120,6 +120,7 @@
     .nav-links {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       gap: 18px;
       color: var(--muted);
       font-size: 14px;
@@ -996,7 +997,7 @@
 
       .nav-links {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 8px;
       }
 
@@ -1061,17 +1062,17 @@
       },
       {
         "@type": "WebSite",
-        "name": "UPI QR Codes",
+        "name": "UPI QR Code Generator - UPI QR Codes",
         "url": "https://upiqrcodes.com/",
         "inLanguage": "en-IN",
         "publisher": {
           "@id": "https://upiqrcodes.com/#organization"
         },
-        "description": "UPI QR Codes is a free browser-based UPI QR Code generator for Indian UPI payment links."
+        "description": "UPI QR Codes is a free browser-based UPI QR Code Generator for Indian UPI payment links and payment QR codes."
       },
       {
         "@type": "WebApplication",
-        "name": "UPI QR Codes",
+        "name": "UPI QR Code Generator",
         "alternateName": "UPI QR Codes",
         "url": "https://upiqrcodes.com/",
         "image": "https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png",
@@ -1089,6 +1090,7 @@
         },
         "featureList": [
           "Generate UPI QR Code online",
+          "Generate UPI QR code from VPA or UPI ID",
           "Create fixed or payer-entered amount UPI QR",
           "Download QR Card or QR only as PNG, JPG, SVG, or PDF",
           "Browser-based generation with no stored payment details"
@@ -1163,6 +1165,7 @@
         <a href="#generator">Generator</a>
         <a href="#how-it-works">How it works</a>
         <a href="#tools">Tools</a>
+        <a href="/blog/">Blog</a>
         <a href="#use-cases">Use cases</a>
         <a href="#faq">FAQ</a>
         <a href="/about">About</a>
@@ -1386,12 +1389,12 @@
     </section>
 
     <section class="copy" id="tools">
-      <h2>UPI QR tools</h2>
-      <p>UPI QR Codes is organized as a focused set of UPI QR tools. Each page targets one clear payment task so the tool, explanation, and examples match the exact search intent.</p>
+      <h2>UPI QR Code Generator tools</h2>
+      <p>UPI QR Codes is organized as a focused UPI QR code generator site. Each page targets one clear payment task so the tool, explanation, and examples match the exact search intent.</p>
       <div class="tool-directory">
         <div class="tool-category">
           <h3>UPI QR Generators</h3>
-          <p>Generate a UPI QR for the specific payment format you need.</p>
+          <p>Generate a UPI QR code for the specific payment format you need.</p>
           <div class="tool-list">
             <a href="/static-upi-qr-code/">Static UPI QR Code Generator</a>
             <a href="/upi-qr-code-with-amount/">UPI QR Code Generator with Amount</a>
@@ -1402,8 +1405,8 @@
           <h3>UPI QR Use Cases</h3>
           <p>Create QR codes for common collection workflows.</p>
           <div class="tool-list">
-            <a href="/upi-qr-code-for-shop/">UPI QR Code for Shop</a>
-            <a href="/upi-qr-code-for-invoice/">UPI QR Code for Invoice</a>
+            <a href="/upi-qr-code-for-shop/">UPI QR Code Generator for Shop</a>
+            <a href="/upi-qr-code-for-invoice/">UPI QR Code Generator for Invoice</a>
           </div>
         </div>
         <div class="tool-category">
@@ -1411,6 +1414,8 @@
           <p>Understand what the QR contains before you print or share it.</p>
           <div class="tool-list">
             <a href="/what-is-upi-qr-code/">What is UPI QR Code?</a>
+            <a href="/blog/how-to-generate-upi-qr-code/">How to Generate UPI QR Code</a>
+            <a href="/blog/how-to-generate-upi-qr-code-from-vpa/">Generate UPI QR Code from VPA</a>
           </div>
         </div>
         <div class="tool-category">
@@ -1511,6 +1516,7 @@
     <a href="/static-upi-qr-code/">Static UPI QR</a> ·
     <a href="/upi-qr-code-with-amount/">QR with amount</a> ·
     <a href="/upi-payment-link-generator/">Payment link</a> ·
+    <a href="/blog/">Blog</a> ·
     <a href="/about">About</a> ·
     <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a> ·
     <a href="https://github.com/White1Dove/upiqrcodes.com">GitHub</a>
