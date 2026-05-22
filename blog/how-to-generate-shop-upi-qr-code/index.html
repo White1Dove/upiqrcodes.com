@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Generate Shop UPI QR Code - Counter Payment Guide</title>
+  <meta name="description" content="Learn how to generate shop UPI QR code for counter payments, when to leave amount blank, how to test it, and when a merchant app is better.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b7a5a">
+  <meta property="og:title" content="How to Generate a Shop UPI QR Code">
+  <meta property="og:description" content="A practical guide to creating, testing, and printing a shop UPI QR code for counter collection.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://upiqrcodes.com/blog/how-to-generate-shop-upi-qr-code/">
+  <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
+  <meta property="og:locale" content="en_IN">
+  <link rel="canonical" href="https://upiqrcodes.com/blog/how-to-generate-shop-upi-qr-code/">
+  <link rel="icon" type="image/png" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="stylesheet" href="/assets/seo-pages.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX4DBQMEJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX4DBQMEJ7');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "How to Generate a Shop UPI QR Code for Counter Payments",
+        "description": "A practical guide to creating, testing, and printing a shop UPI QR code for counter payment collection.",
+        "image": "https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png",
+        "datePublished": "2026-05-22",
+        "dateModified": "2026-05-22",
+        "author": {
+          "@type": "Organization",
+          "name": "UPI QR Codes"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "UPI QR Codes",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png"
+          }
+        },
+        "mainEntityOfPage": "https://upiqrcodes.com/blog/how-to-generate-shop-upi-qr-code/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Should a shop UPI QR code include an amount?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Usually no. A shop counter QR is often static so the customer can enter the final bill amount after scanning."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I print a shop UPI QR code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Test the generated QR first, then print it at a clear size with enough white space around the code."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can this site confirm shop payments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The site creates the payment request only. Confirm receipt in your UPI app, bank app, PSP, or payment gateway."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Clarity tracking code for https://upiqrcodes.com/ -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wtwzw11twt");
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="/"><img class="brand-logo" src="/assets/brand/upi-qr-codes-icon.png" alt="UPI QR Codes logo"><span>UPI QR Codes</span></a>
+      <div class="nav-links"><a href="/">Generator</a><a href="/#tools">Tools</a><a href="/blog/">Blog</a><a href="/privacy">Privacy</a></div>
+    </nav>
+  </header>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="breadcrumb"><a href="/">UPI QR Codes</a> / <a href="/blog/">Blog</a></p>
+      <h1>How to Generate a Shop UPI QR Code for Counter Payments</h1>
+      <p class="hero-copy">Create a shop counter QR that customers can scan, review, and pay from their own UPI app, without adding a fixed amount unless the payment total is known.</p>
+    </div>
+  </div>
+  <main>
+    <section class="copy">
+      <h2>Quick answer</h2>
+      <p>To generate shop UPI QR code for counter payments, use the shop name as the payee name, enter the shop UPI ID or VPA, leave the amount blank for customer-entered totals, and generate a static UPI QR code. Scan-test it before printing or placing it near the billing counter.</p>
+      <p>A shop UPI QR code should make the payment screen easy to verify. The customer should see a recognizable shop name, the correct UPI ID, INR currency, and either no amount or the exact amount expected for that payment.</p>
+      <figure class="article-figure">
+        <img src="/assets/brand/upi-qr-codes-icon.png" width="470" height="380" alt="UPI QR Codes logo for the browser-based shop UPI QR code generator">
+        <figcaption>Use the shop name and receiving UPI ID carefully before downloading or printing a QR card.</figcaption>
+      </figure>
+      <div class="notice">This site creates the UPI payment request only. It does not process money, verify settlement, or connect to your bank account.</div>
+    </section>
+
+    <section class="copy">
+      <h2>What a shop UPI QR code should contain</h2>
+      <p>A practical shop UPI QR code contains the receiving UPI ID, a payee name that customers can recognize, INR currency, and sometimes a short note such as shop counter payment. For most counters, the amount should be left blank because the bill total changes from customer to customer.</p>
+      <div class="card-grid">
+        <div class="card"><h3>Shop UPI ID</h3><p>Use the exact receiving UPI ID or VPA from your UPI app, bank app, PSP dashboard, or verified merchant setup.</p></div>
+        <div class="card"><h3>Recognizable name</h3><p>Use the shop or business name that customers expect to see after scanning.</p></div>
+        <div class="card"><h3>No fixed amount</h3><p>Leave amount blank when the customer should enter the final bill value at the counter.</p></div>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>How to generate shop UPI QR code online</h2>
+      <p>Use these steps when you need a QR for a small shop, stall, service desk, event table, or local counter collection.</p>
+      <div class="card-grid">
+        <div class="card"><h3>1. Open the shop QR tool</h3><p>Use the <a href="/upi-qr-code-for-shop/">UPI QR Code Generator for Shop</a> or the main <a href="/">UPI QR Code Generator</a>.</p></div>
+        <div class="card"><h3>2. Add shop details</h3><p>Enter the shop name and shop UPI ID exactly. Avoid extra spaces or spelling mistakes.</p></div>
+        <div class="card"><h3>3. Generate and test</h3><p>Generate the QR, scan it in a UPI app, and confirm the payee details before printing.</p></div>
+      </div>
+      <p>If the QR opens a payment screen with the wrong name, wrong UPI ID, or confusing note, fix the details and generate a new QR. Do not print the first version until the scan test passes.</p>
+    </section>
+
+    <section class="copy">
+      <h2>Static QR is usually better for shops</h2>
+      <p>A static UPI QR code is reusable because it does not lock a transaction amount. This is usually the right format for shop counters, food stalls, clinics, repair desks, tuition collection, and small local businesses where each bill can be different.</p>
+      <p>A fixed amount UPI QR code makes sense only when the amount is known in advance, such as a single product price, booking fee, event fee, invoice, or package charge. If the customer buys different combinations of items, a fixed amount QR will create extra confusion.</p>
+      <div class="related-grid">
+        <a class="related-link" href="/static-upi-qr-code/"><strong>Static UPI QR Code Generator</strong><p>Create a reusable no-amount QR for payer-entered values.</p></a>
+        <a class="related-link" href="/upi-qr-code-with-amount/"><strong>UPI QR Code Generator with Amount</strong><p>Create a fixed amount QR for known payment totals.</p></a>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>How to print and place the QR</h2>
+      <p>Print the shop UPI QR code at a size that can be scanned easily from a normal phone camera distance. Keep enough white space around the QR. Do not place it on a folded surface, behind reflective glass, or where glare makes scanning unreliable.</p>
+      <p>Put the QR near the billing counter and keep the payee name visible. If customers frequently ask whether the QR is yours, the printed card may need a clearer shop name or a cleaner layout.</p>
+      <figure class="article-figure">
+        <img src="/assets/logos/upi.svg" alt="UPI logo used to identify UPI payment QR codes">
+        <figcaption>A visible UPI mark can help customers understand that the QR is for UPI payment, but the payee details still need to be checked in the app.</figcaption>
+      </figure>
+    </section>
+
+    <section class="copy">
+      <h2>When a merchant app or payment gateway is better</h2>
+      <p>A simple shop UPI QR code is enough when you only need customers to scan, enter the amount, and pay. It is not enough when you need automatic payment status, order reconciliation, refund workflows, customer receipts, staff access controls, or daily settlement reports.</p>
+      <p>Use a merchant app, bank merchant account, PSP, or payment gateway when those business features matter. A QR generator can create the payment request, but it cannot prove that the payment was completed.</p>
+    </section>
+
+    <section class="copy">
+      <h2>Common shop QR mistakes</h2>
+      <div class="card-grid">
+        <div class="card"><h3>Using a personal-looking name</h3><p>If customers expect a shop name but see an unfamiliar person name, they may hesitate or cancel.</p></div>
+        <div class="card"><h3>Printing before testing</h3><p>Always scan the QR before printing multiple copies or placing it at the counter.</p></div>
+        <div class="card"><h3>Assuming QR means paid</h3><p>Scanning does not complete payment. Confirm receipt in your UPI app, bank app, PSP, or gateway.</p></div>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>Related tools and guide</h2>
+      <div class="related-grid">
+        <a class="related-link" href="/upi-qr-code-for-shop/"><strong>UPI QR Code Generator for Shop</strong><p>Create and test a shop counter QR directly.</p></a>
+        <a class="related-link" href="/blog/how-to-generate-upi-qr-code/"><strong>How to Generate a UPI QR Code</strong><p>Read the general guide for creating and testing UPI payment QR codes.</p></a>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <details><summary>Should a shop UPI QR code include an amount?</summary><p>Usually no. A shop counter QR often leaves the amount blank so the customer can enter the final bill value after scanning.</p></details>
+        <details><summary>Can I print a shop UPI QR code?</summary><p>Yes. Test the QR first, then print it clearly with enough white space around the code.</p></details>
+        <details><summary>Can this site confirm shop payments?</summary><p>No. Confirm payment receipt in your UPI app, bank app, PSP dashboard, or payment gateway.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer><a href="/">UPI QR Code Generator</a> · <a href="/blog/">Blog</a> · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a><br>Contact: <a href="mailto:support@upiqrcodes.com">support@upiqrcodes.com</a></footer>
+</body>
+</html>
