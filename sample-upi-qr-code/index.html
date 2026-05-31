@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample UPI QR Code - Example QR and UPI Link Format</title>
+  <meta name="description" content="See a sample UPI QR code and the exact UPI link behind it. Useful for testing scanners and apps, with field-by-field notes and a tool to build your own.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b7a5a">
+  <meta property="og:title" content="Sample UPI QR Code">
+  <meta property="og:description" content="A sample UPI QR code with its decoded UPI link, field notes, and a generator to create your own.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://upiqrcodes.com/sample-upi-qr-code/">
+  <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
+  <meta property="og:locale" content="en_IN">
+  <link rel="canonical" href="https://upiqrcodes.com/sample-upi-qr-code/">
+  <link rel="icon" type="image/png" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="stylesheet" href="/assets/seo-pages.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX4DBQMEJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX4DBQMEJ7');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <!-- Clarity tracking code for https://upiqrcodes.com/ -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wtwzw11twt");
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="/"><img class="brand-logo" src="/assets/brand/upi-qr-codes-icon.png" alt="UPI QR Codes logo"><span>UPI QR Codes</span></a>
+      <div class="nav-links"><a href="/">Generator</a><a href="/#tools">Tools</a><a href="/blog/">Blog</a><a href="/privacy">Privacy</a></div>
+    </nav>
+  </header>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="breadcrumb"><a href="/">UPI QR Codes</a> / Sample UPI QR code</p>
+      <h1>Sample UPI QR Code</h1>
+      <p class="hero-copy">A working example you can scan to see how a UPI code behaves, with the link it carries shown in full. Edit the fields to build your own.</p>
+    </div>
+  </div>
+  <main>
+    <section class="tool-panel" data-upi-tool data-mode="static">
+      <div class="tool-grid">
+        <form class="tool-form" data-upi-form>
+          <div class="field">
+            <label for="payeeName">Name on the Account</label>
+            <input id="payeeName" name="payeeName" type="text" value="Demo Store" required maxlength="80">
+          </div>
+          <div class="field">
+            <label for="upiId">UPI ID / VPA</label>
+            <input id="upiId" name="upiId" type="text" value="demo@upi" required>
+            <span class="hint">demo@upi is a placeholder for illustration. Swap in your own ID to make a real one.</span>
+          </div>
+          <div class="field">
+            <label for="note">Note (Optional)</label>
+            <textarea id="note" name="note" maxlength="80" placeholder="Sample payment"></textarea>
+          </div>
+          <div class="actions">
+            <button class="primary" type="submit">Regenerate Code</button>
+            <a class="button secondary" href="/#generator" data-open-full>Open Full Generator</a>
+          </div>
+          <div class="error" data-error aria-live="polite"></div>
+        </form>
+        <aside class="tool-preview">
+          <div class="qr-box" data-qr></div>
+          <label>UPI Payment Link</label>
+          <div class="intent-output" data-intent-output tabindex="0"></div>
+          <button class="secondary" type="button" data-copy disabled>Copy UPI Link</button>
+          <button class="primary" type="button" data-open-upi disabled>Open UPI App</button>
+        </aside>
+      </div>
+    </section>
+    <div class="notice">This is a sample for testing only. Scanning it opens a payment screen for a placeholder address, not a real account. Do not send money to it.</div>
+
+    <section class="copy">
+      <h2>The UPI link behind the code</h2>
+      <p>Every UPI code is just a short text string wrapped in a scannable image. The sample above carries this:</p>
+      <p class="intent-output" tabindex="0">upi://pay?pa=demo@upi&amp;pn=Demo%20Store&amp;cu=INR</p>
+      <p>When an app reads the image, it parses that string and fills in the payment screen. Nothing is contacted over the network at scan time, which is why a code keeps working offline once it is printed.</p>
+    </section>
+
+    <section class="copy">
+      <h2>What each field means</h2>
+      <div class="card-grid">
+        <div class="card"><h3>pa</h3><p>The payee address, the VPA that receives the money. Here it is the placeholder demo@upi.</p></div>
+        <div class="card"><h3>pn</h3><p>The payee name shown to the person paying. Spaces are encoded, so Demo Store becomes Demo%20Store.</p></div>
+        <div class="card"><h3>cu</h3><p>The currency, always INR for UPI. An am field for a fixed amount can sit alongside it when needed.</p></div>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>Using the example to test</h2>
+      <p>If you are checking a scanner, a billing screen, or your own app, this gives you a known-good code to point it at. The fields are editable, so you can drop in a test VPA, add an amount, and watch the link update before you wire it into anything live.</p>
+      <div class="notice">Always confirm the payee name in the app before any real payment. A sample is for testing the flow, not for collecting funds.</div>
+    </section>
+
+    <section class="copy">
+      <h2>Related UPI QR tools</h2>
+      <div class="related-grid">
+        <a class="related-link" href="/upi-id-to-qr-code/"><strong>UPI ID to QR Code</strong><p>Turn your own VPA into a code in one step.</p></a>
+        <a class="related-link" href="/upi-qr-code-with-amount/"><strong>UPI QR Code with Amount</strong><p>Add a fixed INR value to the link.</p></a>
+        <a class="related-link" href="/blog/how-upi-qr-codes-are-generated/"><strong>How UPI QR Codes Are Generated</strong><p>Read how the link is built and encoded.</p></a>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>Sample UPI QR code FAQ</h2>
+      <div class="faq-list">
+        <details><summary>Can I pay by scanning the sample?</summary><p>No. It points to a placeholder address, so there is no real account behind it. Use it to test scanning, not to send money.</p></details>
+        <details><summary>How do I turn the sample into a real code?</summary><p>Replace demo@upi with your own UPI ID and the name on your account, then regenerate.</p></details>
+        <details><summary>Why does the name show as Demo%20Store in the link?</summary><p>Spaces are percent-encoded inside the link. Apps decode it back to Demo Store on screen.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer><a href="/">UPI QR Code Generator</a> · <a href="/blog/">Blog</a> · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a><br>Contact: <a href="mailto:support@upiqrcodes.com">support@upiqrcodes.com</a></footer>
+  <script src="/assets/mini-upi-tool.js"></script>
+  <script>
+    // Auto-render the sample on load so visitors see a working code immediately.
+    window.addEventListener("load", function () {
+      var form = document.querySelector("[data-upi-form]");
+      if (form && typeof form.requestSubmit === "function") { form.requestSubmit(); }
+    });
+  </script>
+</body>
+</html>

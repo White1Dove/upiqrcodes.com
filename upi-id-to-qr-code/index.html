@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UPI ID to QR Code - Turn a VPA into a Scannable Code</title>
+  <meta name="description" content="Paste a UPI ID and turn it into a scannable QR code. Add the payee name, generate the code in your browser, and download it for collecting payments.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0b7a5a">
+  <meta property="og:title" content="UPI ID to QR Code">
+  <meta property="og:description" content="Convert a UPI ID into a QR code online. Enter the VPA and payee name, then download the code.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://upiqrcodes.com/upi-id-to-qr-code/">
+  <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
+  <meta property="og:locale" content="en_IN">
+  <link rel="canonical" href="https://upiqrcodes.com/upi-id-to-qr-code/">
+  <link rel="icon" type="image/png" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="apple-touch-icon" href="/assets/brand/upi-qr-codes-icon.png">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="stylesheet" href="/assets/seo-pages.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PX4DBQMEJ7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PX4DBQMEJ7');
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <!-- Clarity tracking code for https://upiqrcodes.com/ -->
+  <script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wtwzw11twt");
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <a class="brand" href="/"><img class="brand-logo" src="/assets/brand/upi-qr-codes-icon.png" alt="UPI QR Codes logo"><span>UPI QR Codes</span></a>
+      <div class="nav-links"><a href="/">Generator</a><a href="/#tools">Tools</a><a href="/blog/">Blog</a><a href="/privacy">Privacy</a></div>
+    </nav>
+  </header>
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="breadcrumb"><a href="/">UPI QR Codes</a> / UPI ID to QR code</p>
+      <h1>UPI ID to QR Code</h1>
+      <p class="hero-copy">Already have a UPI ID? Paste it below, add the name on the account, and get a scannable code you can print or share.</p>
+    </div>
+  </div>
+  <main>
+    <section class="tool-panel" data-upi-tool data-mode="static">
+      <div class="tool-grid">
+        <form class="tool-form" data-upi-form>
+          <div class="field">
+            <label for="payeeName">Name on the Account</label>
+            <input id="payeeName" name="payeeName" type="text" placeholder="Account holder or business name" required maxlength="80">
+          </div>
+          <div class="field">
+            <label for="upiId">UPI ID / VPA</label>
+            <input id="upiId" name="upiId" type="text" placeholder="yourname@okhdfcbank" required>
+            <span class="hint">This is the address you already use to receive money, such as name@okhdfcbank or 9876543210@ybl.</span>
+          </div>
+          <div class="field">
+            <label for="note">Note (Optional)</label>
+            <textarea id="note" name="note" maxlength="80" placeholder="Shop counter, personal, collection"></textarea>
+          </div>
+          <div class="actions">
+            <button class="primary" type="submit">Make QR Code</button>
+            <a class="button secondary" href="/#generator" data-open-full>Open Full Generator</a>
+          </div>
+          <div class="error" data-error aria-live="polite"></div>
+        </form>
+        <aside class="tool-preview">
+          <div class="qr-box" data-qr></div>
+          <label>UPI Payment Link</label>
+          <div class="intent-output" data-intent-output tabindex="0"></div>
+          <button class="secondary" type="button" data-copy disabled>Copy UPI Link</button>
+          <button class="primary" type="button" data-open-upi disabled>Open UPI App</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>What a UPI ID looks like</h2>
+      <p>A UPI ID, also written as a VPA, is the address money is sent to. It reads like an email handle split by an @ sign, with the bank or app on the right. Examples are priya@okaxis, ravi.kumar@oksbi, or a phone number such as 9876543210@ybl.</p>
+      <p>The handle on the right tells you which app or bank issued it. Common ones in India include okhdfcbank, okaxis, oksbi, and ybl for PhonePe, along with paytm and apl for other apps. Any valid handle works here, since the code simply carries the address to whichever app the payer scans with.</p>
+    </section>
+
+    <section class="copy">
+      <h2>From address to scannable code</h2>
+      <p>Typing out a VPA at a counter is slow and easy to get wrong. A printed code removes that step: the payer points their camera, the app reads the address, and they only confirm the payment. Nothing about the underlying account changes, so the same code keeps working as long as the ID stays active.</p>
+      <div class="card-grid">
+        <div class="card"><h3>Print it once</h3><p>Stick the code at a counter or add it to a bill, and reuse it for every customer.</p></div>
+        <div class="card"><h3>Share it anywhere</h3><p>Send the image over WhatsApp or put it on a poster, an invoice, or a website.</p></div>
+        <div class="card"><h3>You stay in control</h3><p>The code only holds your address. Money moves only after the payer approves it in their app.</p></div>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>Leave the amount open or fix it</h2>
+      <p>The code made here carries the address with the amount left blank, so the payer types whatever they owe. When the total is known in advance, such as a fixed fee or an invoice, encode the value instead so it shows up ready to confirm.</p>
+      <div class="notice">Check the code with one real scan before you print or share it. This page does not confirm whether a payment settled.</div>
+    </section>
+
+    <section class="copy">
+      <h2>Related UPI QR tools</h2>
+      <div class="related-grid">
+        <a class="related-link" href="/static-upi-qr-code/"><strong>Static UPI QR Code Generator</strong><p>Create a reusable code where the payer enters the amount.</p></a>
+        <a class="related-link" href="/upi-qr-code-with-amount/"><strong>UPI QR Code with Amount</strong><p>Fix the INR value so the payer just confirms it.</p></a>
+        <a class="related-link" href="/blog/how-to-generate-upi-qr-code-from-vpa/"><strong>How to Generate a QR from a VPA</strong><p>Read the step-by-step guide for turning a VPA into a code.</p></a>
+      </div>
+    </section>
+
+    <section class="copy">
+      <h2>UPI ID to QR code FAQ</h2>
+      <div class="faq-list">
+        <details><summary>Do I need a new UPI ID to make a code?</summary><p>No. Use the address you already receive money on. The code carries that same ID to the payer's app.</p></details>
+        <details><summary>Which apps can scan the code?</summary><p>Any UPI app reads it, including Google Pay, PhonePe, Paytm, and BHIM, regardless of which bank issued the ID.</p></details>
+        <details><summary>Is my UPI ID stored anywhere?</summary><p>No. The code is built in your browser. The site does not save the ID, name, note, or the image it produces.</p></details>
+      </div>
+    </section>
+  </main>
+  <footer><a href="/">UPI QR Code Generator</a> · <a href="/blog/">Blog</a> · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a><br>Contact: <a href="mailto:support@upiqrcodes.com">support@upiqrcodes.com</a></footer>
+  <script src="/assets/mini-upi-tool.js"></script>
+</body>
+</html>
