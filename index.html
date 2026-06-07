@@ -131,8 +131,7 @@
       text-decoration: none;
     }
 
-    .nav-toggle,
-    .nav-toggle-label {
+    .nav-toggle {
       display: none;
     }
 
@@ -1022,14 +1021,6 @@
       }
 
       .nav-toggle {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        opacity: 0;
-        pointer-events: none;
-      }
-
-      .nav-toggle-label {
         width: 40px;
         height: 40px;
         border: 1px solid #d0d5dd;
@@ -1043,7 +1034,7 @@
         flex: 0 0 auto;
       }
 
-      .nav-toggle-label::before {
+      .nav-toggle::before {
         content: "";
         width: 18px;
         height: 2px;
@@ -1052,7 +1043,7 @@
         box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
       }
 
-      .nav-toggle:focus-visible + .nav-toggle-label {
+      .nav-toggle:focus-visible {
         outline: 2px solid rgba(10, 132, 255, 0.7);
         outline-offset: 3px;
       }
@@ -1078,7 +1069,7 @@
         white-space: nowrap;
       }
 
-      .nav-toggle:checked ~ .nav-links {
+      .nav-links.is-open {
         display: flex;
       }
 
@@ -1290,11 +1281,10 @@
         <img class="brand-logo" src="assets/brand/upi-qr-codes-icon.png" alt="UPI QR Code Generator logo">
         <span>UPI QR Codes</span>
       </a>
-      <input class="nav-toggle" type="checkbox" id="site-nav-toggle" aria-label="Toggle navigation menu">
-      <label class="nav-toggle-label" for="site-nav-toggle">
+      <button class="nav-toggle" type="button" id="site-nav-toggle" aria-controls="site-nav-menu" aria-expanded="false">
         <span class="visually-hidden">Toggle navigation menu</span>
-      </label>
-      <div class="nav-links">
+      </button>
+      <div class="nav-links" id="site-nav-menu">
         <a href="#generator">Generator</a>
         <a href="#how-it-works">How it works</a>
         <a href="#tools">Tools</a>
@@ -1687,6 +1677,8 @@
   </div>
 
   <script>
+    const navToggle = document.getElementById("site-nav-toggle");
+    const siteNavMenu = document.getElementById("site-nav-menu");
     const form = document.getElementById("upiForm");
     const qrEl = document.getElementById("qrcode");
     const previewPayee = document.getElementById("previewPayee");
@@ -1712,6 +1704,29 @@
     const emailBtn = document.getElementById("emailBtn");
     const whatsappBtn = document.getElementById("whatsappBtn");
     const previewPanel = document.querySelector(".preview");
+
+    if (navToggle && siteNavMenu) {
+      const setNavOpen = (isOpen) => {
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        siteNavMenu.classList.toggle("is-open", isOpen);
+      };
+
+      navToggle.addEventListener("click", () => {
+        setNavOpen(navToggle.getAttribute("aria-expanded") !== "true");
+      });
+
+      siteNavMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setNavOpen(false));
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setNavOpen(false);
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!event.target.closest(".nav")) setNavOpen(false);
+      });
+    }
 
     let latestIntent = "";
     let qrInstance = null;
