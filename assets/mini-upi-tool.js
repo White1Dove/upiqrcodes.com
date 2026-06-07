@@ -9,6 +9,7 @@
   const copyBtn = tool.querySelector("[data-copy]");
   const openUpiBtn = tool.querySelector("[data-open-upi]");
   const openBtn = tool.querySelector("[data-open-full]");
+  const downloadBtn = tool.querySelector("[data-download]");
   const mode = tool.dataset.mode || "default";
   const upiIdPattern = /^[a-zA-Z0-9._-]{2,256}@[a-zA-Z][a-zA-Z0-9._-]{2,64}$/;
 
@@ -17,6 +18,15 @@
 
   function clean(value, maxLength) {
     return String(value || "").trim().replace(/\s+/g, " ").slice(0, maxLength);
+  }
+
+  function trackToolEvent(name, params = {}) {
+    if (typeof gtag !== "function") return;
+    gtag("event", name, {
+      page_path: window.location.pathname,
+      tool_mode: mode,
+      ...params
+    });
   }
 
   function values() {
@@ -64,6 +74,7 @@
     output.textContent = "upi://pay?... will appear here";
     copyBtn.disabled = true;
     openUpiBtn.disabled = true;
+    if (downloadBtn) downloadBtn.disabled = true;
   }
 
   function renderQr(intent) {
@@ -80,6 +91,7 @@
     output.textContent = intent;
     copyBtn.disabled = false;
     openUpiBtn.disabled = false;
+    if (downloadBtn) downloadBtn.disabled = false;
   }
 
   function updateOpenLink(next) {
@@ -107,6 +119,39 @@
     }
 
     renderQr(buildIntent(next));
+    trackToolEvent("generate_qr", {
+      has_amount: Boolean(next.amount),
+      has_note: Boolean(next.note)
+    });
+  }
+
+  function getQrCanvas() {
+    return qrEl.querySelector("canvas");
+  }
+
+  function safeFileName(next) {
+    return (next.payeeName || "upi-qr")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")
+      .slice(0, 48) || "upi-qr";
+  }
+
+  function downloadQrPng() {
+    if (!latestIntent) return;
+    const canvas = getQrCanvas();
+    if (!canvas) return;
+
+    const link = document.createElement("a");
+    link.href = canvas.toDataURL("image/png");
+    link.download = `${safeFileName(values())}-upi-qr.png`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    trackToolEvent("download_qr", {
+      download_target: "qr_only",
+      file_format: "png"
+    });
   }
 
   form.addEventListener("submit", (event) => {
@@ -125,12 +170,18 @@
     } catch {
       output.focus();
     }
+    trackToolEvent("copy_upi_link");
   });
 
   openUpiBtn.addEventListener("click", () => {
     if (!latestIntent) return;
+    trackToolEvent("open_upi_app");
     window.location.href = latestIntent;
   });
+
+  if (downloadBtn) {
+    downloadBtn.addEventListener("click", downloadQrPng);
+  }
 
   updateOpenLink(values());
   setPlaceholder("Enter details, then generate your UPI QR.");

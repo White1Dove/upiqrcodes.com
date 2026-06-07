@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UPI ID to QR Code - Turn a VPA into a Scannable Code</title>
-  <meta name="description" content="Paste a UPI ID and turn it into a scannable QR code. Add the payee name, generate the code in your browser, and download it for collecting payments.">
+  <title>UPI ID to QR Code Generator - Create QR from VPA</title>
+  <meta name="description" content="Paste a UPI ID or VPA, add the payee name, and generate a scannable UPI QR code in your browser. Copy the UPI link or download the QR as PNG.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0b7a5a">
-  <meta property="og:title" content="UPI ID to QR Code">
-  <meta property="og:description" content="Convert a UPI ID into a QR code online. Enter the VPA and payee name, then download the code.">
+  <meta property="og:title" content="UPI ID to QR Code Generator">
+  <meta property="og:description" content="Convert a UPI ID or VPA into a QR code online. Enter the address and payee name, then copy the UPI link or download the code.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://upiqrcodes.com/upi-id-to-qr-code/">
   <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
@@ -27,6 +27,68 @@
     gtag('config', 'G-PX4DBQMEJ7');
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "UPI ID to QR Code Generator",
+        "url": "https://upiqrcodes.com/upi-id-to-qr-code/",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "isAccessibleForFree": true,
+        "inLanguage": "en-IN",
+        "description": "Create a scannable UPI QR code from a UPI ID or VPA, payee name, and optional note."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do I need a new UPI ID to make a code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Use the UPI ID or VPA you already use to receive money. The QR code carries that same payment address."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I create a UPI QR code from only a VPA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can create the payment link from a VPA, but adding the payee name makes the payment screen easier for the payer to verify."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which apps can scan the code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Any UPI app can read the code, including Google Pay, PhonePe, Paytm, BHIM, and bank UPI apps."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download the generated UPI QR code?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. After generating the code, use the Download QR PNG button to save the QR image."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my UPI ID stored anywhere?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The QR code is generated in your browser. The site does not store your UPI ID, payee name, note, payment link, or QR image."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
   <!-- Clarity tracking code for https://upiqrcodes.com/ -->
   <script>
     (function(c,l,a,r,i,t,y){
@@ -46,8 +108,8 @@
   <div class="hero">
     <div class="hero-inner">
       <p class="breadcrumb"><a href="/">UPI QR Codes</a> / UPI ID to QR code</p>
-      <h1>UPI ID to QR Code</h1>
-      <p class="hero-copy">Already have a UPI ID? Paste it below, add the name on the account, and get a scannable code you can print or share.</p>
+      <h1>UPI ID to QR Code Generator</h1>
+      <p class="hero-copy">Paste a UPI ID or VPA, add the payee name, and generate a scannable UPI QR code you can copy, download, print, or share.</p>
     </div>
   </div>
   <main>
@@ -79,14 +141,26 @@
           <div class="intent-output" data-intent-output tabindex="0"></div>
           <button class="secondary" type="button" data-copy disabled>Copy UPI Link</button>
           <button class="primary" type="button" data-open-upi disabled>Open UPI App</button>
+          <button class="secondary" type="button" data-download disabled>Download QR PNG</button>
         </aside>
       </div>
+    </section>
+
+    <section class="copy">
+      <h2>Convert a UPI ID or VPA into a QR code</h2>
+      <p>This page is for the common case where you already know the payment address and only need a scan code. Paste the UPI ID, add the account or business name, and the tool creates a standard upi://pay link inside the QR code.</p>
+      <p>Use it for a shop counter, a personal collection, a payment request, or a simple web page where typing the VPA would slow the payer down.</p>
     </section>
 
     <section class="copy">
       <h2>What a UPI ID looks like</h2>
       <p>A UPI ID, also written as a VPA, is the address money is sent to. It reads like an email handle split by an @ sign, with the bank or app on the right. Examples are priya@okaxis, ravi.kumar@oksbi, or a phone number such as 9876543210@ybl.</p>
       <p>The handle on the right tells you which app or bank issued it. Common ones in India include okhdfcbank, okaxis, oksbi, and ybl for PhonePe, along with paytm and apl for other apps. Any valid handle works here, since the code simply carries the address to whichever app the payer scans with.</p>
+      <div class="card-grid">
+        <div class="card"><h3>PhonePe style</h3><p>9876543210@ybl or name@ybl</p></div>
+        <div class="card"><h3>Bank style</h3><p>name@okhdfcbank, name@oksbi, or name@okaxis</p></div>
+        <div class="card"><h3>Paytm style</h3><p>name@paytm or mobile-number based handles.</p></div>
+      </div>
     </section>
 
     <section class="copy">
@@ -110,6 +184,7 @@
       <div class="related-grid">
         <a class="related-link" href="/static-upi-qr-code/"><strong>Static UPI QR Code Generator</strong><p>Create a reusable code where the payer enters the amount.</p></a>
         <a class="related-link" href="/upi-qr-code-with-amount/"><strong>UPI QR Code with Amount</strong><p>Fix the INR value so the payer just confirms it.</p></a>
+        <a class="related-link" href="/"><strong>Free UPI QR Code Generator</strong><p>Use the full generator for QR card downloads, amount, note, share, and print actions.</p></a>
         <a class="related-link" href="/blog/how-to-generate-upi-qr-code-from-vpa/"><strong>How to Generate a QR from a VPA</strong><p>Read the step-by-step guide for turning a VPA into a code.</p></a>
       </div>
     </section>
@@ -118,7 +193,9 @@
       <h2>UPI ID to QR code FAQ</h2>
       <div class="faq-list">
         <details><summary>Do I need a new UPI ID to make a code?</summary><p>No. Use the address you already receive money on. The code carries that same ID to the payer's app.</p></details>
+        <details><summary>Can I create a UPI QR code from only a VPA?</summary><p>You can create the payment link from a VPA, but adding the payee name makes it easier for the payer to verify the payment screen before approval.</p></details>
         <details><summary>Which apps can scan the code?</summary><p>Any UPI app reads it, including Google Pay, PhonePe, Paytm, and BHIM, regardless of which bank issued the ID.</p></details>
+        <details><summary>Can I download the generated UPI QR code?</summary><p>Yes. Generate the code first, then use Download QR PNG to save the image for sharing or printing.</p></details>
         <details><summary>Is my UPI ID stored anywhere?</summary><p>No. The code is built in your browser. The site does not save the ID, name, note, or the image it produces.</p></details>
       </div>
     </section>

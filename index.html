@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Free UPI QR Code Generator - UPI QR Codes</title>
-  <meta name="description" content="UPI QR Codes is a free browser-based UPI QR code generator for Indian payments, shops, invoices, payment links, and fixed amounts.">
+  <title>Free UPI QR Code Generator - Generate UPI QR Online</title>
+  <meta name="description" content="Generate free UPI QR codes online from a UPI ID or VPA. Add payee name, optional amount and note, then download or print the QR for Indian payments.">
   <meta name="robots" content="index,follow">
   <meta name="application-name" content="UPI QR Codes">
   <meta name="author" content="UPI QR Codes">
   <meta name="theme-color" content="#0b7a5a">
   <meta name="format-detection" content="telephone=no">
-  <meta property="og:title" content="Free UPI QR Code Generator - Create UPI QR Online">
-  <meta property="og:description" content="Generate a UPI QR Code online for Indian payments. Fast, free, browser-based, and compatible with BHIM UPI apps including Google Pay, PhonePe, Paytm, and Amazon Pay.">
+  <meta property="og:title" content="Free UPI QR Code Generator - Generate UPI QR Online">
+  <meta property="og:description" content="Generate a UPI QR Code online from a UPI ID or VPA. Add optional amount and note, then download, print, or share the QR.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://upiqrcodes.com/">
   <meta property="og:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
   <meta property="og:locale" content="en_IN">
   <meta property="og:site_name" content="UPI QR Codes">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Free UPI QR Code Generator - Create UPI QR Online">
-  <meta name="twitter:description" content="Create and download a UPI QR Code online. The QR is generated in your browser and your payment details are not stored.">
+  <meta name="twitter:title" content="Free UPI QR Code Generator - Generate UPI QR Online">
+  <meta name="twitter:description" content="Create a UPI QR Code online from a UPI ID or VPA, with optional amount and note. Generated locally in your browser.">
   <meta name="twitter:image" content="https://upiqrcodes.com/assets/brand/upi-qr-codes-icon.png">
   <link rel="canonical" href="https://upiqrcodes.com/">
   <link rel="icon" type="image/png" href="assets/brand/upi-qr-codes-icon.png">
@@ -129,6 +129,23 @@
     .nav-links a {
       color: inherit;
       text-decoration: none;
+    }
+
+    .nav-toggle,
+    .nav-toggle-label {
+      display: none;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .hero {
@@ -966,7 +983,7 @@
       }
 
       .hero-inner {
-        padding-top: 46px;
+        padding-top: 30px;
       }
 
       .generator {
@@ -989,20 +1006,95 @@
 
     @media (max-width: 620px) {
       .nav {
-        align-items: flex-start;
-        flex-direction: column;
-        padding-top: 14px;
-        padding-bottom: 14px;
+        min-height: 58px;
+        padding: 8px 16px;
+        gap: 12px;
+        position: relative;
+      }
+
+      .brand {
+        gap: 8px;
+        font-size: 15px;
+      }
+
+      .brand-logo {
+        width: 34px;
+      }
+
+      .nav-toggle {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .nav-toggle-label {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #d0d5dd;
+        border-radius: 8px;
+        background: #fff;
+        color: #344054;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex: 0 0 auto;
+      }
+
+      .nav-toggle-label::before {
+        content: "";
+        width: 18px;
+        height: 2px;
+        border-radius: 999px;
+        background: currentColor;
+        box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+      }
+
+      .nav-toggle:focus-visible + .nav-toggle-label {
+        outline: 2px solid rgba(10, 132, 255, 0.7);
+        outline-offset: 3px;
       }
 
       .nav-links {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 8px;
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 16px;
+        right: 16px;
+        z-index: 20;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 6px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        box-shadow: 0 16px 36px rgba(16, 24, 40, 0.16);
+        color: #344054;
+        font-size: 15px;
+        overflow: visible;
+        white-space: nowrap;
+      }
+
+      .nav-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+
+      .nav-links a {
+        border-radius: 6px;
+        padding: 11px 10px;
+      }
+
+      .nav-links a:hover,
+      .nav-links a:focus-visible {
+        background: #f2f4f7;
       }
 
       .hero-inner {
-        padding: 24px 16px 34px;
+        gap: 14px;
+        padding: 16px 16px 22px;
       }
 
       .hero-copy,
@@ -1018,12 +1110,13 @@
 
       .tool-head,
       .generator {
-        padding: 16px;
+        padding: 12px;
       }
 
       .tool-head {
-        align-items: flex-start;
-        flex-direction: column;
+        align-items: center;
+        flex-direction: row;
+        padding-bottom: 12px;
       }
 
       .split,
@@ -1037,11 +1130,47 @@
       }
 
       h1 {
-        font-size: 30px;
+        margin-bottom: 10px;
+        font-size: 28px;
+        line-height: 1.08;
       }
 
       h2 {
         font-size: 25px;
+      }
+
+      .hero-copy p {
+        font-size: 14px;
+        line-height: 1.38;
+        max-width: 330px;
+      }
+
+      .trust-note {
+        display: none;
+      }
+
+      .form-grid {
+        gap: 10px;
+      }
+
+      .field {
+        gap: 5px;
+      }
+
+      input,
+      select,
+      textarea {
+        min-height: 42px;
+        padding: 9px 10px;
+      }
+
+      .hint {
+        font-size: 11px;
+      }
+
+      .actions,
+      .intent-box {
+        margin-top: 10px;
       }
     }
   </style>
@@ -1161,6 +1290,10 @@
         <img class="brand-logo" src="assets/brand/upi-qr-codes-icon.png" alt="UPI QR Code Generator logo">
         <span>UPI QR Codes</span>
       </a>
+      <input class="nav-toggle" type="checkbox" id="site-nav-toggle" aria-label="Toggle navigation menu">
+      <label class="nav-toggle-label" for="site-nav-toggle">
+        <span class="visually-hidden">Toggle navigation menu</span>
+      </label>
       <div class="nav-links">
         <a href="#generator">Generator</a>
         <a href="#how-it-works">How it works</a>
@@ -1177,11 +1310,11 @@
     <div class="hero-inner">
       <div class="hero-copy">
         <h1>Free UPI QR Code Generator</h1>
-        <p>UPI QR Codes is a free browser-based UPI QR Code Generator for Indian UPI payments. It creates UPI payment QR codes and UPI payment links for shops, invoices, donations, and fixed-amount requests without storing the details you enter.</p>
+        <p>Enter a UPI ID or VPA, payee name, and optional amount to generate a UPI QR code you can download, print, or share.</p>
       </div>
 
       <div class="trust-note">
-        This UPI QR Code Generator creates your QR code within your browser. We do not collect, transmit, or store any information you enter below.
+        Local browser generation. We do not store your UPI ID, payment link, or QR code.
       </div>
 
       <section class="tool-shell" id="generator" aria-label="UPI QR code generator">
@@ -1593,6 +1726,15 @@
 
     const upiIdPattern = /^[a-zA-Z0-9._-]{2,256}@[a-zA-Z][a-zA-Z0-9._-]{2,64}$/;
 
+    function trackToolEvent(name, params = {}) {
+      if (typeof gtag !== "function") return;
+      gtag("event", name, {
+        page_path: window.location.pathname,
+        tool_mode: "homepage",
+        ...params
+      });
+    }
+
     function cleanText(value, maxLength) {
       return value.trim().replace(/\s+/g, " ").slice(0, maxLength);
     }
@@ -1743,6 +1885,10 @@
       }
 
       renderQr(buildUpiIntent(values), values);
+      trackToolEvent("generate_qr", {
+        has_amount: Boolean(values.amount),
+        has_note: Boolean(values.note)
+      });
       scrollToPreviewOnMobile();
     }
 
@@ -1993,6 +2139,11 @@
       } else if (format === "pdf") {
         downloadBlob(pdfBlobFromCanvas(canvas), `${baseName}.pdf`);
       }
+
+      trackToolEvent("download_qr", {
+        download_target: target,
+        file_format: format
+      });
     }
 
     function toggleDownloadMenu(menu) {
@@ -2118,21 +2269,25 @@
         textarea.remove();
         showToast("UPI link copied");
       }
+      trackToolEvent("copy_upi_link");
     });
 
     openBtn.addEventListener("click", () => {
       if (!latestIntent) return;
       openShareModal();
+      trackToolEvent("share_qr_card");
     });
 
     openUpiBtn.addEventListener("click", () => {
       if (!latestIntent) return;
+      trackToolEvent("open_upi_app");
       window.location.href = latestIntent;
     });
 
     printBtn.addEventListener("click", () => {
       if (!latestIntent) return;
       printQrCard();
+      trackToolEvent("print_qr_card");
     });
 
     closeShareBtn.addEventListener("click", closeShareModal);
@@ -2151,6 +2306,7 @@
           new ClipboardItem({ [blob.type]: blob })
         ]);
         showToast("QR image copied");
+        trackToolEvent("copy_qr_image");
       } catch {
         showToast("Copy image is not supported in this browser");
       }
@@ -2159,18 +2315,24 @@
     shareDownloadBtn.addEventListener("click", () => {
       const values = getFormValues();
       downloadDataUrl(buildCardImage(values), `upi-qr-card-${getSafeName(values)}.png`);
+      trackToolEvent("download_qr", {
+        download_target: "share_card",
+        file_format: "png"
+      });
     });
 
     emailBtn.addEventListener("click", () => {
       const values = getFormValues();
       const subject = encodeURIComponent(`UPI QR Code - ${values.payeeName}`);
       const body = encodeURIComponent(`UPI payment link: ${latestIntent}`);
+      trackToolEvent("share_qr_email");
       window.open(`https://mail.google.com/mail/?view=cm&fs=1&su=${subject}&body=${body}`, "_blank", "noopener,noreferrer");
     });
 
     whatsappBtn.addEventListener("click", () => {
       const values = getFormValues();
       const message = encodeURIComponent(`${getShareText(values)}\n${latestIntent}`);
+      trackToolEvent("share_qr_whatsapp");
       window.open(`https://wa.me/?text=${message}`, "_blank", "noopener,noreferrer");
     });
 
